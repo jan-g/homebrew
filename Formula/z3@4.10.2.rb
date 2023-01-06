@@ -14,7 +14,7 @@ class Z3AT4102 < Formula
 
   # Has Python bindings but are supplementary to the main library
   # which does not need Python.
-  depends_on "python@3.10" => :build
+  depends_on "python@3.11" => :build
 
   on_linux do
     depends_on "gcc" # For C++17
@@ -23,7 +23,7 @@ class Z3AT4102 < Formula
   fails_with gcc: "5"
 
   def install
-    python3 = Formula["python@3.10"].opt_bin/"python3"
+    python3 = Formula["python@3.11"].opt_bin/"python3"
     system python3, "scripts/mk_make.py",
                      "--prefix=#{prefix}",
                      "--python",
